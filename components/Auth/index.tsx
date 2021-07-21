@@ -1,5 +1,6 @@
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebaseClient from 'firebaseConfig/client';
+import Image from 'next/image'
 
 const uiConfig = {
    signInFlow: 'popup',
@@ -15,7 +16,7 @@ const Auth = () => {
             <span className={'text-purple-500 font-bold underline'}>true</span>
          </h1>
          <figure className={'flex justify-center my-20'}>
-            <img
+            <Image
                src={'/wishes.svg'}
                alt={'Cover pic'}
                width={300}
