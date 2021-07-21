@@ -5,7 +5,7 @@ import firebaseClient from 'firebaseConfig/client';
 import Layout from '@/components/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
-   const [user, loading, error] = useAuthState(firebaseClient.auth());
+   const [user, loading] = useAuthState(firebaseClient.auth());
 
    return (
       <Layout isLoading={loading}>

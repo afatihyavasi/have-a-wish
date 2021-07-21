@@ -2,17 +2,16 @@ import React from 'react';
 import firebaseClient from 'firebaseConfig/client';
 
 type WishType = {
-   currentUser: firebaseClient.User;
    doc: firebaseClient.firestore.QueryDocumentSnapshot<firebaseClient.firestore.DocumentData>;
 };
 
 const Wish: React.FC<WishType> = (props) => {
-   const { currentUser, doc } = props;
+   const { doc } = props;
    return (
-      <div>
-         <h1>{doc.data().wish}</h1>
-         <h2>{currentUser.displayName}</h2>
-         <h4>{currentUser.photoURL}</h4>
+      <div className={'text-xl'}>
+         <h2 className={'border-l-2 pl-1 mt-4 text-green-400'}>
+            ✨ ✨ <span>{doc.data().wish}</span>
+         </h2>
       </div>
    );
 };

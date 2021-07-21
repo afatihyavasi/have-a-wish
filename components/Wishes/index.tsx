@@ -10,7 +10,7 @@ type WishesTypes = {
 };
 
 const Wishes: React.FC<WishesTypes> = ({ currentUser }) => {
-   const [wishes, wishesLoading, wishesError] = useCollection(
+   const [wishes, wishesLoading] = useCollection(
       firebaseClient.firestore().collection('wishes'),
       {}
    );
@@ -30,26 +30,39 @@ const Wishes: React.FC<WishesTypes> = ({ currentUser }) => {
       setWish('');
    };
    return (
-      <div>
-         <Header />
-         Do you have something to say ?
-         <form onSubmit={handleSubmit}>
-            <input
-               value={wish}
-               onChange={handleChange}
-               placeholder='Wish'
-               required
-            />
-            <button type='submit'>Send</button>
-         </form>
-         <Loading isLoading={wishesLoading}>
+      <Loading isLoading={wishesLoading}>
+         <div className={'container mx-auto p-5'}>
+            <Header />
+            <h1 className={'my-10 text-xl sm:text-3xl'}>
+               Do you have{' '}
+               <span className={'text-purple-400'}>something to say ?</span>
+            </h1>
+            <form onSubmit={handleSubmit}>
+               <input
+                  value={wish}
+                  className={
+                     'border-2 border-indigo-300 w-full py-2 px-2 rounded'
+                  }
+                  onChange={handleChange}
+                  placeholder='Wish'
+                  required
+               />
+               <div className={'flex justify-end my-3'}>
+                  <button
+                     className={'bg-pink-50 text-pink-500 py-1 px-2 rounded'}
+                     type='submit'
+                  >
+                     Send
+                  </button>
+               </div>
+            </form>
             <div>
                {wishes?.docs.map((doc) => (
-                  <Wish key={doc.id} doc={doc} currentUser={currentUser} />
+                  <Wish key={doc.id} doc={doc} />
                ))}
             </div>
-         </Loading>
-      </div>
+         </div>
+      </Loading>
    );
 };
 
