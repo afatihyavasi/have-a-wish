@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
    const [user, loading, error] = useAuthState(firebaseClient.auth());
 
    return (
-      <Layout currentUser={user} isLoading={loading}>
+      <Layout isLoading={loading}>
          <Component {...pageProps} currentUser={user} />
       </Layout>
    );
