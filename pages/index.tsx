@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import firebaseClient from 'firebaseConfig/client';
 import Auth from '@/components/Auth';
-import Wish from '@/components/Wish'
+import Wishes from '@/components/Wishes'
 
 
 type HomeTypes = {
@@ -17,7 +17,7 @@ export default function Home(props: HomeTypes) {
             <meta name='description' content='Have a wish app' />
          </Head>
          {
-            currentUser ? <Wish currentUser={currentUser}/> : <Auth />
+            currentUser ? <Wishes currentUser={currentUser}/> : <Auth />
          }
       </div>
    );
