@@ -16,7 +16,7 @@ To clone and run this application, you'll need Git and Node.js (which comes with
 
 ### Clone this repository
 
-`$ https://github.com/afatihyavasi/HigchartsChallengeNextJS.git`
+`$ https://github.com/afatihyavasi/have-a-wish.git`
 
 ### Install dependencies
 
