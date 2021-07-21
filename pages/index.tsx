@@ -17,7 +17,7 @@ export default function Home(props: HomeTypes) {
             <meta name='description' content='Have a wish app' />
          </Head>
          {
-            currentUser ? <Wish /> : <Auth />
+            currentUser ? <Wish currentUser={currentUser}/> : <Auth />
          }
       </div>
    );

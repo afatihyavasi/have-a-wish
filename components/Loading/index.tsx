@@ -7,7 +7,9 @@ interface ILoadingTypes {
 const Loading: React.FC<ILoadingTypes> = (props) => {
    const { isLoading, children } = props;
 
-   if (isLoading) <Spinner />;
+   if (isLoading) {
+      return <Spinner />;
+   }
 
    return <>{children}</>;
 };
