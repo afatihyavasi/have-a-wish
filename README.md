@@ -7,7 +7,7 @@
 
  - [Next.js](https://nextjs.org/)
  - [TypeScript](https://www.typescriptlang.org/)
- - [Fireabase](https://firebase.google.com/)
+ - [Firebase](https://firebase.google.com/)
  - [Tailwind CSS](https://tailwindcss.com/)
 
 ## How to use
